@@ -4,7 +4,57 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
+}
+
+button {
+  all: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+body {
+  color: ghostwhite;
+  background-color: #111;
+}
+
+main,
+.desktop-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.desktop-container {
+  overflow: hidden;
+}
+.desktop-container .desktop {
+  height: 97%;
+  width: 100%;
+}
+.desktop-container .taskbar {
+  height: 3%;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  background-color: #1A222E;
+  border-top: 1px solid #26303E;
+}
+
+.desktop-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url("./images/Pixel-World.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.start, .action, .pinned-apps, .action-center {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  gap: 10px;
 }/*# sourceMappingURL=style.css.map */
