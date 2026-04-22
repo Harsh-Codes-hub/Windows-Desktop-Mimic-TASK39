@@ -22,9 +22,50 @@
       href="./favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <div class="desktop-container">
+        <section class="desktop"></section>
+        <section class="taskbar">
+          <div class="start">
+            <button type="button" class="start-btn">
+              <i class="ri-microsoft-fill"></i>
+            </button>
+            <div class="search">
+              <input type="text" class="search-bar" id="search-bar" />
+            </div>
+            <div class="task-view">
+              <img src="" alt="" />
+            </div>
+            <ul class="pinned-apps">
+              <li class="apps"><img src="" alt="" /></li>
+              <li class="apps"><img src="" alt="" /></li>
+              <li class="apps"><img src="" alt="" /></li>
+            </ul>
+          </div>
+          <div class="action">
+            <button type="button" class="hiddenTray-btn" id="hiddenTray-btn">
+              <i class="ri-arrow-drop-down-line"></i>
+            </button>
+            <ul class="action-center">
+              <li class="action-item wifi"><img src="" alt="" /></li>
+              <li class="action-item sound"><img src="" alt="" /></li>
+              <li class="action-item battery"><img src="" alt="" /></li>
+            </ul>
+            <div class="time-date">
+              <span class="time"></span>
+              <span class="date"></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
