@@ -34,13 +34,14 @@ main,
     width: 100%;
   }
 
-  .taskbar{
-    height: 3%;
-    width: 100%;
+  .taskbar {
+    height: 30px;
+    width: 100vw;
     display: flex;
-    gap: 100px;
-    background-color: #1A222E;
-    border-top: 1px solid #26303E;
+    background-color: oklch(24.989% 0.02572 258.356);
+    border-top: 1px solid oklch(30.615% 0.02895 256.863);
+    justify-content: space-between;
+    padding-left: 44%;
   }
 }
 
@@ -58,10 +59,78 @@ main,
 
 // taskbar
 
-.start, .action, .pinned-apps, .action-center {
-    list-style-type: none;
-    height: 100%;
-    display: flex;
-    gap: 10px;
+.start,
+.action,
+.pinned-apps,
+.action-center {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
+.start {
+  // margin-left: auto;
+  gap: 10px;
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  i {
+    font-size: 22px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right bottom, oklch(83.412% 0.10294 205.624), oklch(71.03% 0.16607 242.049));
+  }
+}
+
+.search {
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #3B424C;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 10px;
+  gap: 10px;
+  width: 200px;
+
+  .search-bar {
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    &::placeholder {
+      color: #95999F;
+    }
+  }
+}
+
+.pinned-apps {
+  .apps img {
+    height: auto;
+    width: 22px;
+  }
+}
+
+.task-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    aspect-ratio: 1/1;
+    width: 25px;
+  }
+}
+
+.minimize {
+  padding-inline: 6px;
+  padding-block: 15px;
+}
