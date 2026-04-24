@@ -19,7 +19,7 @@ button {
 body {
   color: ghostwhite;
   background-color: #111;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main,
@@ -33,6 +33,10 @@ main,
   .desktop {
     height: 97vh;
     width: 100%;
+    background-image: url("./images/Pixel-World.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
   }
 
   .taskbar {
@@ -48,14 +52,41 @@ main,
 
 // desktop
 
-// desktop > desktop background
+// desktop > right-click-options
 
-.desktop-bg {
-  height: 100%;
-  width: 100%;
-  background-image: url("./images/Pixel-World.png");
-  background-size: cover;
-  background-position: center;
+.right-click-options {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 175px;
+  padding: 5px 10px;
+  background-color: oklch(25.78% 0.00746 285.816 / 0.904);
+  border: 1px solid oklch(24.989% 0.02572 258.356 / 0.486);
+  border-radius: 11px;
+  backdrop-filter: blur(5px);
+  .option-group {
+    list-style-type: none;
+    border-top: 1px solid oklch(37.188% 0.02226 281.772);
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-block: 5px;
+  gap: 10px;
+  .opt-icon {
+    font-size: 16px;
+  }
+  .opt-name {
+    font-size: 14px;
+    margin-right: auto;
+  }
 }
 
 // taskbar
@@ -75,7 +106,6 @@ main,
 // taskbar > start
 
 .start {
-  // margin-left: auto;
   gap: 10px;
 }
 
@@ -83,19 +113,23 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   i {
-    font-size: 22px;
+    font-size: 20px;
     color: transparent;
     background-clip: text;
-    background-image: linear-gradient(to right bottom, oklch(83.412% 0.10294 205.624), oklch(71.03% 0.16607 242.049));
+    background-image: linear-gradient(
+      to right bottom,
+      oklch(83.412% 0.10294 205.624) 30%,
+      oklch(71.03% 0.16607 242.049) 60%
+    );
   }
 }
 
 .search {
   border-radius: 30px;
   overflow: hidden;
-  background-color: #3B424C;
+  background-color: #3b424c;
   height: 22px;
   display: flex;
   justify-content: center;
@@ -112,7 +146,7 @@ main,
     font-size: 14px;
     color: ghostwhite;
     &::placeholder {
-      color: #95999F;
+      color: #95999f;
     }
   }
 }
@@ -141,8 +175,10 @@ main,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  letter-spacing: 1px;
+  gap: 2px;
   p {
-    font-size: 11px;
+    font-size: 9px;
   }
 }
 

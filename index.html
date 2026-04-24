@@ -32,7 +32,53 @@
     <main>
       <div class="desktop-container">
         <section class="desktop">
-          <div class="desktop-bg"></div>
+          <div class="right-click-options">
+            <ul class="option-group">
+              <li class="option">
+                <span class="opt-icon"><i class="ri-gallery-view-2"></i></span>
+                <span class="opt-name">View</span>
+                <span class="more-icon"><i class="ri-arrow-right-s-line"></i></span>
+              </li>
+              <li class="option">
+                <span class="opt-icon"><i class="ri-arrow-up-down-line"></i></span>
+                <span class="opt-name">Sort by</span>
+                <span class="more-icon"><i class="ri-arrow-right-s-line"></i></span>
+              </li>
+              <li class="option">
+                <span class="opt-icon"><i class="ri-reset-right-line"></i></span>
+                <span class="opt-name">Refresh</span>
+              </li>
+            </ul>
+            <ul class="option-group">
+              <li class="option">
+                <span class="opt-icon"><i class="ri-add-circle-line"></i></span>
+                <span class="opt-name">New</span>
+                <span class="more-icon"><i class="ri-arrow-right-s-line"></i></span>
+              </li>
+            </ul>
+            <ul class="option-group">
+              <li class="option">
+                <span class="opt-icon"><i class="ri-computer-line"></i></span>
+                <span class="opt-name">Display Settings</span>
+              </li>
+              <li class="option">
+                <span class="opt-icon"><i class="ri-pencil-line"></i></span>
+                <span class="opt-name">Personalize</span>
+              </li>
+            </ul>
+            <ul class="option-group">
+              <li class="option">
+                <span class="opt-icon"><i class="ri-terminal-box-fill"></i></span>
+                <span class="opt-name">Open in Terminal</span>
+              </li>
+            </ul>
+            <ul class="option-group">
+              <li class="option">
+                <span class="opt-icon"><i class="ri-arrow-right-up-box-line"></i></span>
+                <span class="opt-name">Show more options</span>
+              </li>
+            </ul>
+          </div>
         </section>
         <section class="taskbar">
           <div class="start">
@@ -41,7 +87,12 @@
             </button>
             <div class="search">
               <i class="ri-search-line"></i>
-              <input type="text" class="search-bar" id="search-bar" placeholder="Search"/>
+              <input
+                type="text"
+                class="search-bar"
+                id="search-bar"
+                placeholder="Search"
+              />
             </div>
             <div class="task-view">
               <img src="./images/task-View.png" alt="" />
@@ -61,16 +112,18 @@
             </div>
             <ul class="action-center">
               <li class="action-item wifi"><i class="ri-wifi-line"></i></li>
-              <li class="action-item sound"><i class="ri-volume-up-line"></i></li>
-              <li class="action-item battery"><i class="ri-battery-fill"></i><span>100%</span></li>
+              <li class="action-item sound">
+                <i class="ri-volume-up-line"></i>
+              </li>
+              <li class="action-item battery">
+                <i class="ri-battery-fill"></i><span>100%</span>
+              </li>
             </ul>
             <div class="time-date">
               <p class="time">05:31 PM</p>
               <p class="date">22-04-2026</p>
             </div>
-            <div class="minimize">
-              
-            </div>
+            <div class="minimize"></div>
           </div>
         </section>
       </div>

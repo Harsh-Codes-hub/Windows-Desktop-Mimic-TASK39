@@ -35,6 +35,10 @@ main,
 .desktop-container .desktop {
   height: 97vh;
   width: 100%;
+  background-image: url("./images/Pixel-World.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 .desktop-container .taskbar {
   height: 3vh;
@@ -46,12 +50,40 @@ main,
   padding-left: 44%;
 }
 
-.desktop-bg {
-  height: 100%;
-  width: 100%;
-  background-image: url("./images/Pixel-World.png");
-  background-size: cover;
-  background-position: center;
+.right-click-options {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 175px;
+  padding: 5px 10px;
+  background-color: oklch(25.78% 0.00746 285.816deg / 0.904);
+  border: 1px solid oklch(24.989% 0.02572 258.356deg / 0.486);
+  border-radius: 11px;
+  backdrop-filter: blur(5px);
+}
+.right-click-options .option-group {
+  list-style-type: none;
+  border-top: 1px solid oklch(37.188% 0.02226 281.772deg);
+}
+.right-click-options .option-group:first-child {
+  border-top: none;
+}
+
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-block: 5px;
+  gap: 10px;
+}
+.option .opt-icon {
+  font-size: 16px;
+}
+.option .opt-name {
+  font-size: 14px;
+  margin-right: auto;
 }
 
 .start,
@@ -76,17 +108,17 @@ main,
   justify-content: center;
 }
 .start-btn i {
-  font-size: 22px;
+  font-size: 20px;
   color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  background-image: linear-gradient(to right bottom, oklch(83.412% 0.10294 205.624deg), oklch(71.03% 0.16607 242.049deg));
+  background-image: linear-gradient(to right bottom, oklch(83.412% 0.10294 205.624deg) 30%, oklch(71.03% 0.16607 242.049deg) 60%);
 }
 
 .search {
   border-radius: 30px;
   overflow: hidden;
-  background-color: #3B424C;
+  background-color: #3b424c;
   height: 22px;
   display: flex;
   justify-content: center;
@@ -104,10 +136,10 @@ main,
   color: ghostwhite;
 }
 .search .search-bar::-moz-placeholder {
-  color: #95999F;
+  color: #95999f;
 }
 .search .search-bar::placeholder {
-  color: #95999F;
+  color: #95999f;
 }
 
 .task-view {
@@ -130,9 +162,11 @@ main,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  letter-spacing: 1px;
+  gap: 2px;
 }
 .language p {
-  font-size: 11px;
+  font-size: 9px;
 }
 
 .action-center {
