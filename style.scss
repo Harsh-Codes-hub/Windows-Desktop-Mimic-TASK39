@@ -19,6 +19,7 @@ button {
 body {
   color: ghostwhite;
   background-color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main,
@@ -30,12 +31,12 @@ main,
 .desktop-container {
   overflow: hidden;
   .desktop {
-    height: 97%;
+    height: 97vh;
     width: 100%;
   }
 
   .taskbar {
-    height: 30px;
+    height: 3vh;
     width: 100vw;
     display: flex;
     background-color: oklch(24.989% 0.02572 258.356);
@@ -71,6 +72,8 @@ main,
   justify-content: center;
 }
 
+// taskbar > start
+
 .start {
   // margin-left: auto;
   gap: 10px;
@@ -93,7 +96,7 @@ main,
   border-radius: 30px;
   overflow: hidden;
   background-color: #3B424C;
-  height: 26px;
+  height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,16 +110,10 @@ main,
     border: none;
     outline: none;
     font-size: 14px;
+    color: ghostwhite;
     &::placeholder {
       color: #95999F;
     }
-  }
-}
-
-.pinned-apps {
-  .apps img {
-    height: auto;
-    width: 22px;
   }
 }
 
@@ -128,6 +125,51 @@ main,
     aspect-ratio: 1/1;
     width: 25px;
   }
+}
+
+.pinned-apps {
+  .apps img {
+    height: auto;
+    width: 22px;
+  }
+}
+
+// taskbar > action
+
+.language {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 11px;
+  }
+}
+
+.action-center {
+  font-size: 14px;
+}
+
+.battery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  i {
+    margin-top: 2px;
+  }
+  span {
+    font-size: 11px;
+  }
+}
+
+.time-date {
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  letter-spacing: 1px;
+  align-items: flex-end;
 }
 
 .minimize {
