@@ -47,6 +47,7 @@ main,
     border-top: 1px solid oklch(30.615% 0.02895 256.863);
     justify-content: space-between;
     padding-left: 44%;
+    align-items: center;
   }
 }
 
@@ -101,6 +102,7 @@ main,
   gap: 10px;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 // taskbar > start
@@ -130,7 +132,6 @@ main,
   border-radius: 30px;
   overflow: hidden;
   background-color: #3b424c;
-  height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,6 +145,7 @@ main,
     border: none;
     outline: none;
     font-size: 14px;
+    padding-block: 2px;
     color: ghostwhite;
     &::placeholder {
       color: #95999f;
