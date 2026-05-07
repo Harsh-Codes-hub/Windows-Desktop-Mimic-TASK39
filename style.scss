@@ -100,16 +100,17 @@ input {
 // ===== Taskbar =====
 
 .taskbar {
+  position: relative;
+
   height: $taskbar-height;
 
   display: flex;
   align-items: center;
-  justify-content: center;
 
   padding-inline: 10px;
 
   background-color: $taskbar-bg;
-  border-top: 2px solid $taskbar-border;
+  border-top: 1px solid $taskbar-border;
 }
 
 // ===== Taskbar Regions =====
@@ -123,10 +124,16 @@ input {
 }
 
 .taskbar-center {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
   gap: 6px;
 }
 
 .taskbar-right {
+  margin-left: auto;
   gap: 2px;
 }
 
@@ -136,11 +143,11 @@ input {
   height: 85%;
 
   aspect-ratio: 1/1;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   border-radius: $item-radius;
 
   // ===== Taskbar Items =====
@@ -148,4 +155,120 @@ input {
   & i {
     font-size: 1.2rem;
   }
+}
+
+// ===== Start Trigger =====
+
+.start-trigger {
+  & i {
+    font-size: 1.5rem;
+
+    color: transparent;
+
+    background-image: linear-gradient(
+      to bottom right,
+      oklch(83.412% 0.10294 205.624),
+      oklch(71.03% 0.16607 242.049)
+    );
+
+    background-clip: text;
+  }
+}
+
+// ===== Taskbar Search =====
+
+.taskbar-search {
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding-inline: 12px;
+
+  border-radius: 999px;
+
+  background-color: oklch(100% 0.00011 271.152 / 0.08);
+}
+
+// ===== Search Button =====
+
+.search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+}
+
+// ===== Search Input =====
+
+.search-input {
+  width: 180px;
+
+  font-size: 0.9rem;
+}
+
+// ===== Taskbar Apps =====
+
+.taskbar-apps {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  & img {
+    width: 22px;
+
+    aspect-ratio: 1/1;
+
+    object-fit: contain;
+  }
+}
+
+// ===== Language Trigger =====
+
+.language-trigger {
+  padding-inline: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.65rem;
+  line-height: 1.1;
+}
+
+// ===== Quick Action Trigger =====
+
+.quick-action-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding-inline: 10px;
+  font-size: 0.9rem;
+}
+
+// ===== Notification Trigger =====
+
+.notification-trigger {
+  padding-inline: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  font-size: 0.65rem;
+  line-height: 1.2;
+
+  width: 75px;
+}
+
+// ===== Show Desktop Trigger =====
+
+.show-desktop-trigger {
+  width: 10px;
+  height: 100%;
 }

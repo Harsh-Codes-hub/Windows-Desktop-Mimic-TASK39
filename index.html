@@ -69,21 +69,15 @@
 
           <!-- Pinned Apps -->
           <nav class="taskbar-apps">
-            <button
-              type="button"
-              class="taskbar-item"
-              data-app="default"
-            ></button>
-            <button
-              type="button"
-              class="taskbar-item"
-              data-app="pinned"
-            ></button>
-            <button
-              type="button"
-              class="taskbar-item"
-              data-app="pinned"
-            ></button>
+            <button type="button" class="taskbar-item" data-app="default">
+              <img src="./images/task-View.png" alt="task view" />
+            </button>
+            <button type="button" class="taskbar-item" data-app="pinned">
+              <img src="./images/folder.png" alt="folder" />
+            </button>
+            <button type="button" class="taskbar-item" data-app="pinned">
+              <img src="./images/brave.png" alt="brave" />
+            </button>
           </nav>
         </section>
 
@@ -103,21 +97,33 @@
             type="button"
             class="taskbar-item language-trigger"
             aria-label="Open Language Panel"
-          ></button>
+          >
+            <span>ENG</span>
+            <span>IN</span>
+          </button>
 
           <!-- Quick Actions -->
           <button
             type="button"
             class="taskbar-item quick-action-trigger"
             aria-label="Open Quick Actions Panel"
-          ></button>
+          >
+            <i class="ri-wifi-line"></i>
+            <i class="ri-volume-up-line"></i>
+            <i class="ri-battery-fill"></i>
+            <span>100%</span>
+          </button>
 
           <!-- Notification -->
           <button
             type="button"
             class="taskbar-item notification-trigger"
             aria-label="Open Notification Panel"
-          ></button>
+          >
+            <span class="taskbar-time">05:31 PM</span>
+
+            <span class="taskbar-date"> 22-04-2026 </span>
+          </button>
 
           <!-- Show Desktop -->
           <button
