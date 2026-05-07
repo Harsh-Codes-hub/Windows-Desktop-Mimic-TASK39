@@ -29,391 +29,104 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <div class="desktop-container">
-        <section class="desktop">
-          <div class="right-click-options">
-            <ul class="option-group">
-              <li class="option">
-                <span class="opt-icon"><i class="ri-gallery-view-2"></i></span>
-                <span class="opt-name">View</span>
-                <span class="more-icon"
-                  ><i class="ri-arrow-right-s-line"></i
-                ></span>
-              </li>
-              <li class="option">
-                <span class="opt-icon"
-                  ><i class="ri-arrow-up-down-line"></i
-                ></span>
-                <span class="opt-name">Sort by</span>
-                <span class="more-icon"
-                  ><i class="ri-arrow-right-s-line"></i
-                ></span>
-              </li>
-              <li class="option">
-                <span class="opt-icon"
-                  ><i class="ri-reset-right-line"></i
-                ></span>
-                <span class="opt-name">Refresh</span>
-              </li>
-            </ul>
-            <ul class="option-group">
-              <li class="option">
-                <span class="opt-icon"><i class="ri-add-circle-line"></i></span>
-                <span class="opt-name">New</span>
-                <span class="more-icon"
-                  ><i class="ri-arrow-right-s-line"></i
-                ></span>
-              </li>
-            </ul>
-            <ul class="option-group">
-              <li class="option">
-                <span class="opt-icon"><i class="ri-computer-line"></i></span>
-                <span class="opt-name">Display Settings</span>
-              </li>
-              <li class="option">
-                <span class="opt-icon"><i class="ri-pencil-line"></i></span>
-                <span class="opt-name">Personalize</span>
-              </li>
-            </ul>
-            <ul class="option-group">
-              <li class="option">
-                <span class="opt-icon"
-                  ><i class="ri-terminal-box-fill"></i
-                ></span>
-                <span class="opt-name">Open in Terminal</span>
-              </li>
-            </ul>
-            <ul class="option-group">
-              <li class="option">
-                <span class="opt-icon"
-                  ><i class="ri-arrow-right-up-box-line"></i
-                ></span>
-                <span class="opt-name">Show more options</span>
-              </li>
-            </ul>
-          </div>
-          <div class="start-menu">
-            <div class="start-menu__search">
-              <input type="text" placeholder="Search apps, settings..." />
-            </div>
-
-            <div class="start-menu__section">
-              <div class="section-header">
-                <h3>Pinned</h3>
-                <button>All →</button>
-              </div>
-
-              <div class="grid">
-                <!-- Repeat items -->
-                <div class="app">
-                  <div class="icon"></div>
-                  <span>App Name</span>
-                </div>
-
-                <div class="app">
-                  <div class="icon"></div>
-                  <span>Design</span>
-                </div>
-
-                <div class="app">
-                  <div class="icon"></div>
-                  <span>Tools</span>
-                </div>
-
-                <div class="app">
-                  <div class="icon"></div>
-                  <span>Media</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="start-menu__section">
-              <div class="section-header">
-                <h3>Recommended</h3>
-                <button>More →</button>
-              </div>
-
-              <div class="list">
-                <div class="file">
-                  <div class="icon small"></div>
-                  <div class="info">
-                    <span class="title">project.png</span>
-                    <span class="meta">Yesterday</span>
-                  </div>
-                </div>
-
-                <div class="file">
-                  <div class="icon small"></div>
-                  <div class="info">
-                    <span class="title">notes.txt</span>
-                    <span class="meta">2 days ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="start-menu__footer">
-              <div class="user">
-                <div class="avatar"></div>
-                <span>Harsh Gajrani</span>
-              </div>
-              <button class="power">⏻</button>
-            </div>
-          </div>
-
-          <div class="tray-modal">
-            <div class="tray-grid">
-              <div class="tray-item">
-                <div class="icon"></div>
-              </div>
-
-              <div class="tray-item">
-                <div class="icon"></div>
-              </div>
-
-              <div class="tray-item">
-                <div class="icon"></div>
-              </div>
-
-              <div class="tray-item">
-                <div class="icon"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="lang-modal">
-            <div class="lang-modal__header">
-              <span class="title">Keyboard layout</span>
-              <span class="hint">⌨ Spacebar</span>
-            </div>
-
-            <div class="lang-modal__list">
-              <div class="lang-item active">
-                <div class="indicator"></div>
-                <div class="info">
-                  <span class="primary">ENG &nbsp; English (India)</span>
-                  <span class="secondary">English (India)</span>
-                </div>
-              </div>
-
-              <div class="lang-item">
-                <div class="indicator"></div>
-                <div class="info">
-                  <span class="primary"
-                    >ENG &nbsp; English (United States)</span
-                  >
-                  <span class="secondary">US</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="lang-modal__footer">
-              <span>More keyboard settings</span>
-            </div>
-          </div>
-
-          <div class="action-modal">
-            <!-- Quick Toggles -->
-            <div class="action-modal__grid">
-              <div class="tile active">
-                <div class="icon"></div>
-                <span>Data Source</span>
-              </div>
-
-              <div class="tile active">
-                <div class="icon"></div>
-                <span>Not connected</span>
-              </div>
-
-              <div class="tile">
-                <div class="icon"></div>
-                <span>Studio effects</span>
-              </div>
-
-              <div class="tile">
-                <div class="icon"></div>
-                <span>Airplane mode</span>
-              </div>
-
-              <div class="tile">
-                <div class="icon"></div>
-                <span>Energy saver</span>
-              </div>
-
-              <div class="tile">
-                <div class="icon"></div>
-                <span>Accessibility</span>
-              </div>
-            </div>
-
-            <!-- Sliders -->
-            <div class="action-modal__sliders">
-              <div class="slider">
-                <div class="icon small"></div>
-                <div class="track">
-                  <div class="fill" style="width: 65%"></div>
-                  <div class="thumb" style="left: 65%"></div>
-                </div>
-              </div>
-
-              <div class="slider">
-                <div class="icon small"></div>
-                <div class="track">
-                  <div class="fill" style="width: 35%"></div>
-                  <div class="thumb" style="left: 35%"></div>
-                </div>
-                <div class="icon small"></div>
-              </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="action-modal__footer">
-              <div class="battery">
-                <div class="icon tiny"></div>
-                <span>97%</span>
-              </div>
-
-              <div class="icon small"></div>
-            </div>
-          </div>
-
-          <div class="notify-panel">
-            <!-- Notifications -->
-            <div class="notify-panel__notifications">
-              <div class="header">
-                <span>Notifications</span>
-                <div class="icon small"></div>
-              </div>
-
-              <div class="empty">
-                <span>No new notifications</span>
-              </div>
-            </div>
-
-            <!-- Calendar -->
-            <div class="notify-panel__calendar">
-              <div class="calendar-header">
-                <span>Monday, 4 May</span>
-                <div class="icon small"></div>
-              </div>
-
-              <div class="calendar-body">
-                <div class="month-row">
-                  <span>May, 2026</span>
-                  <div class="controls">
-                    <div class="icon tiny"></div>
-                    <div class="icon tiny"></div>
-                  </div>
-                </div>
-
-                <div class="weekdays">
-                  <span>Su</span><span>Mo</span><span>Tu</span> <span>We</span
-                  ><span>Th</span><span>Fr</span><span>Sa</span>
-                </div>
-
-                <div class="days">
-                  <!-- row -->
-                  <span class="muted">26</span>
-                  <span class="muted">27</span>
-                  <span class="muted">28</span>
-                  <span class="muted">29</span>
-                  <span class="muted">30</span>
-                  <span>1</span>
-                  <span>2</span>
-
-                  <span>3</span>
-                  <span class="active">4</span>
-                  <span>5</span>
-                  <span>6</span>
-                  <span>7</span>
-                  <span>8</span>
-                  <span>9</span>
-
-                  <span>10</span><span>11</span><span>12</span> <span>13</span
-                  ><span>14</span><span>15</span><span>16</span>
-
-                  <span>17</span><span>18</span><span>19</span> <span>20</span
-                  ><span>21</span><span>22</span><span>23</span>
-
-                  <span>24</span><span>25</span><span>26</span> <span>27</span
-                  ><span>28</span><span>29</span><span>30</span>
-
-                  <span>31</span>
-                  <span class="muted">1</span>
-                  <span class="muted">2</span>
-                  <span class="muted">3</span>
-                  <span class="muted">4</span>
-                  <span class="muted">5</span>
-                  <span class="muted">6</span>
-                </div>
-
-                <!-- Footer controls -->
-                <div class="calendar-footer">
-                  <div class="time">
-                    <div class="btn">−</div>
-                    <span>30 mins</span>
-                    <div class="btn">+</div>
-                  </div>
-
-                  <div class="focus">
-                    <div class="icon tiny"></div>
-                    <span>Focus</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <main class="desktop-shell">
+      <section class="desktop-area">
+        <section class="desktop-icons"></section>
+        <section class="context-layer"></section>
+        <section class="overlay-layer">
+          <section class="panel start-menu"></section>
+          <section class="panel tray-panel"></section>
+          <section class="panel language-panel"></section>
+          <section class="panel quick-action-panel"></section>
+          <section class="panel notification-panel"></section>
         </section>
-        <section class="taskbar">
-          <div class="start">
-            <button type="button" class="start-btn">
-              <i class="ri-microsoft-fill"></i>
-            </button>
-            <div class="search">
+      </section>
+
+      <footer class="taskbar">
+        <!-- Left Side -->
+        <section class="taskbar-left">
+          <!-- Future Functionality -->
+        </section>
+
+        <!-- Right Side -->
+        <section class="taskbar-center">
+          <!-- Start -->
+          <button
+            type="button"
+            class="taskbar-item start-trigger"
+            aria-label="Open Start Menu"
+          >
+            <i class="ri-microsoft-fill"></i>
+          </button>
+
+          <!-- Search -->
+          <form class="taskbar-search">
+            <button type="submit" class="search-submit" aria-label="Search">
               <i class="ri-search-line"></i>
-              <input
-                type="text"
-                class="search-bar"
-                id="search-bar"
-                placeholder="Search"
-              />
-            </div>
-            <div class="task-view">
-              <img src="./images/task-View.png" alt="" />
-            </div>
-            <ul class="pinned-apps">
-              <li class="apps"><img src="./images/folder.png" alt="" /></li>
-              <li class="apps"><img src="./images/brave.png" alt="" /></li>
-            </ul>
-          </div>
-          <div class="action">
-            <button type="button" class="hiddenTray-btn" id="hiddenTray-btn">
-              <i class="ri-arrow-up-s-line"></i>
             </button>
-            <div class="language">
-              <p>ENG</p>
-              <p>IN</p>
-            </div>
-            <ul class="action-center">
-              <li class="action-item wifi"><i class="ri-wifi-line"></i></li>
-              <li class="action-item sound">
-                <i class="ri-volume-up-line"></i>
-              </li>
-              <li class="action-item battery">
-                <i class="ri-battery-fill"></i><span>100%</span>
-              </li>
-            </ul>
-            <div class="time-date">
-              <p class="time">05:31 PM</p>
-              <p class="date">22-04-2026</p>
-            </div>
-            <div class="minimize">
-              <div class="minimize-indicator"></div>
-            </div>
-          </div>
+            <input type="text" class="search-input" placeholder="Search" />
+          </form>
+
+          <!-- Pinned Apps -->
+          <nav class="taskbar-apps">
+            <button
+              type="button"
+              class="taskbar-item"
+              data-app="default"
+            ></button>
+            <button
+              type="button"
+              class="taskbar-item"
+              data-app="pinned"
+            ></button>
+            <button
+              type="button"
+              class="taskbar-item"
+              data-app="pinned"
+            ></button>
+          </nav>
         </section>
-      </div>
+
+        <!-- Right Side -->
+        <section class="taskbar-right">
+          <!-- Hidden Tray -->
+          <button
+            type="button"
+            class="taskbar-item tray-trigger"
+            aria-label="Open Tray Panel"
+          >
+            <i class="ri-arrow-up-s-line"></i>
+          </button>
+
+          <!-- Language -->
+          <button
+            type="button"
+            class="taskbar-item language-trigger"
+            aria-label="Open Language Panel"
+          ></button>
+
+          <!-- Quick Actions -->
+          <button
+            type="button"
+            class="taskbar-item quick-action-trigger"
+            aria-label="Open Quick Actions Panel"
+          ></button>
+
+          <!-- Notification -->
+          <button
+            type="button"
+            class="taskbar-item notification-trigger"
+            aria-label="Open Notification Panel"
+          ></button>
+
+          <!-- Show Desktop -->
+          <button
+            type="button"
+            class="show-desktop-trigger"
+            aria-label="Show Desktop"
+          ></button>
+        </section>
+      </footer>
     </main>
     <script src="script.js"></script>
   </body>
