@@ -214,7 +214,7 @@ input {
 .taskbar-apps {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 
   & img {
     width: 22px;
@@ -271,4 +271,331 @@ input {
 .show-desktop-trigger {
   width: 10px;
   height: 100%;
+}
+
+// ===== Panel System =====
+
+.panel {
+  position: absolute;
+
+  pointer-events: auto;
+
+  border-radius: 18px;
+
+  background-color: rgba(25, 25, 28, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+// ===== Start Menu =====
+
+.start-menu {
+  width: 620px;
+
+  padding: 20px;
+
+  // display: flex;
+  display: none;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+// ===== Start Search =====
+
+.start-search {
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-inline: 14px;
+
+  border-radius: 14px;
+
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.start-search-input {
+  flex: 1;
+
+  font-size: 0.95rem;
+}
+
+//  ===== Start Section =====
+
+.start-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+// ===== Section Header =====
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.section-action {
+  font-size: 0.8rem;
+}
+
+// ===== Start Grid =====
+
+.start-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+// ===== Start App =====
+
+.start-app {
+  width: 86px;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px;
+
+  text-align: center;
+
+  border-radius: 12px;
+}
+
+.start-app-icon {
+  width: 36px;
+  aspect-ratio: 1/1;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+}
+
+.start-app-name {
+  font-size: 0.75rem;
+}
+
+// ===== Recommended List =====
+
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+// ===== Recommended Item =====
+
+.recommended-item {
+  width: 45%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px;
+
+  border-radius: 12px;
+}
+
+// ===== Recommended Icon =====
+
+.recommended-icon {
+  width: 36px;
+  aspect-ratio: 1/1;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+// ===== Recommended Content =====
+
+.recommended-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+// ===== Recommended Text =====
+
+.recommended-title {
+  font-size: 0.82rem;
+}
+
+.recommended-meta {
+  font-size: 0.72rem;
+
+  opacity: 0.7;
+}
+
+// ===== Start Footer =====
+
+.start-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 8px;
+}
+
+// ===== Profile Trigger =====
+
+.profile-trigger {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 10px;
+
+  border-radius: 12px;
+}
+
+// ===== Profile Avatar =====
+
+.profile-avatar {
+  width: 32px;
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+}
+
+//  ===== Profile Name =====
+
+.profile-name {
+  font-size: 0.85rem;
+}
+
+// ===== Profile-trigger =====
+
+.power-trigger {
+  width: 38px;
+  aspect-ratio: 1/1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+}
+
+// ===== Language Panel =====
+
+.language-panel {
+  width: 320px;
+
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+// ===== Language Header =====
+
+.language-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.language-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.language-shortcut {
+  font-size: 0.72rem;
+
+  opacity: 0.7;
+}
+
+// ===== Language List =====
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+// ===== Language Item =====
+
+.language-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px;
+
+  border-radius: 12px;
+}
+
+// ===== Language Indicator =====
+
+.language-indicator {
+  width: 4px;
+  height: 32px;
+
+  border-radius: 999px;
+
+  background-color: transparent;
+}
+
+// ===== Active Language =====
+
+.active-language {
+  background-color: rgba(255, 255, 255, 0.06);
+
+  .language-indicator {
+    background-color: #3b82f6;
+  }
+}
+
+// ===== Language Content =====
+
+.language-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+// ===== Language Footer =====
+
+.language-footer {
+  padding-top: 4px;
+}
+
+.language-settings-trigger {
+  font-size: 0.8rem;
+
+  opacity: 0.8;
 }

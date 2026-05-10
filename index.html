@@ -65,7 +65,9 @@
               <header class="section-header">
                 <h2 class="section-title">Pinned</h2>
 
-                <button type="button" class="section-action">All<i class="ri-arrow-right-s-line"></i></button>
+                <button type="button" class="section-action">
+                  All<i class="ri-arrow-right-s-line"></i>
+                </button>
               </header>
 
               <section class="start-grid">
@@ -88,7 +90,9 @@
               <header class="section-header">
                 <h2 class="section-title">Recommended</h2>
 
-                <button type="button" class="section-action">More<i class="ri-arrow-right-s-line"></i></button>
+                <button type="button" class="section-action">
+                  More<i class="ri-arrow-right-s-line"></i>
+                </button>
               </header>
 
               <section class="recommended-list">
@@ -101,10 +105,19 @@
                     <span class="recommended-meta"> Yesterday </span>
                   </section>
                 </button>
+                <button type="button" class="recommended-item">
+                  <div class="recommended-icon"></div>
+
+                  <section class="recommended-content">
+                    <span class="recommended-title"> Project.png </span>
+
+                    <span class="recommended-meta"> Yesterday </span>
+                  </section>
+                </button>
               </section>
             </section>
 
-            <!-- Footer -->
+            <!-- Start Footer -->
             <footer class="start-footer">
               <button type="button" class="profile-trigger">
                 <div class="profile-avatar"></div>
@@ -122,7 +135,43 @@
             </footer>
           </section>
           <section class="panel tray-panel"></section>
-          <section class="panel language-panel"></section>
+
+          <!-- Language Panel -->
+          <section class="panel language-panel">
+            <!-- Language Header -->
+            <header class="language-header">
+              <h2 class="language-title">Keyboard Layout</h2>
+              <span class="language-shortcut"> Space </span>
+            </header>
+
+            <!-- Language List -->
+            <section class="language-list">
+              <!-- Active -->
+              <button type="button" class="language-item active-language">
+                <div class="language-indicator"></div>
+                <section class="language-content">
+                  <span class="language-name"> English (India) </span>
+                  <span class="language-region"> ENG </span>
+                </section>
+              </button>
+
+              <!-- Non-Active -->
+              <button type="button" class="language-item">
+                <div class="language-indicator"></div>
+                <section class="language-content">
+                  <span class="language-name"> English (US) </span>
+                  <span class="language-region"> ENG </span>
+                </section>
+              </button>
+            </section>
+
+            <!-- Language Footer -->
+             <footer class="language-footer">
+              <button type="button" class="language-settings-trigger">
+                Language Settings
+              </button>
+             </footer>
+          </section>
           <section class="panel quick-action-panel"></section>
           <section class="panel notification-panel"></section>
         </section>
