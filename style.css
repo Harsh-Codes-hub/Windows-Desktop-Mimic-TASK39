@@ -488,6 +488,7 @@ input {
 }
 
 .tray-panel {
+  display: none;
   padding: 12px;
   border-radius: 16px;
 }

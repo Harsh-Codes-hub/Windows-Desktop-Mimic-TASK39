@@ -137,9 +137,8 @@
 
           <!-- Tray Panel -->
           <section class="panel tray-panel">
-
             <!-- Tray Grid -->
-             <section class="tray-grid">
+            <section class="tray-grid">
               <button type="button" class="tray-item">
                 <div class="tray-icon"></div>
               </button>
@@ -152,8 +151,7 @@
               <button type="button" class="tray-item">
                 <div class="tray-icon"></div>
               </button>
-             </section>
-
+            </section>
           </section>
 
           <!-- Language Panel -->
@@ -252,7 +250,77 @@
           </section>
 
           <!-- Notification Panel -->
-          <section class="panel notification-panel"></section>
+          <section class="panel notification-panel">
+            <!-- Notification Area -->
+            <section class="notification-section">
+              <!-- Notification Header -->
+              <header class="notification-header">
+                <h2 class="notification-title">Notifications</h2>
+                <button type="button" class="notification-clear-trigger">
+                  <i class="ri-notification-off-line"></i>
+                </button>
+              </header>
+
+              <!-- Empty State -->
+              <section class="notification-empty-state">
+                <span>No new notification</span>
+              </section>
+            </section>
+
+            <!-- Calender Area -->
+            <section class="calender-section">
+              <!-- Calender Header -->
+              <header class="calender-header">
+                <section class="calender-date-info">
+                  <span class="calender-day-name"> Monday </span>
+                  <span class="calender-full-date"> 4 May </span>
+                </section>
+
+                <button type="button" class="calender-collapse-trigger">
+                  <i class="ri-arrow-down-s-line"></i>
+                </button>
+              </header>
+
+              <!-- Month Header -->
+              <section class="calender-month-header">
+                <button type="button" class="calender-nav-trigger">
+                  <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <span class="calender-month-label"> May 2026 </span>
+                <button type="button" class="calender-nav-trigger">
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </section>
+
+              <!-- Week Days -->
+              <section class="calender-weekdays">
+                <span>Su</span>
+                <span>Mo</span>
+                <span>Tu</span>
+                <span>We</span>
+                <span>Th</span>
+                <span>Fr</span>
+                <span>Sa</span>
+              </section>
+
+              <!-- Calender Grid -->
+              <section class="calender-grid">
+                <button type="button" class="calendar-day muted-day">26</button>
+                <button type="button" class="calendar-day active-day">4</button>
+                <button type="button" class="calendar-day">5</button>
+              </section>
+
+              <!-- calender Footer -->
+              <footer class="calendar-footer">
+                <section class="focus-time">
+                  <button type="button" class="focus-time-trigger">-</button>
+                  <span class="focus-duration">30 mins</span>
+                  <button type="button" class="focus-time-trigger">+</button>
+                </section>
+                <button type="button" class="focus-trigger">Focus</button>
+              </footer>
+            </section>
+          </section>
         </section>
       </section>
 
