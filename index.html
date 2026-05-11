@@ -134,7 +134,27 @@
               </button>
             </footer>
           </section>
-          <section class="panel tray-panel"></section>
+
+          <!-- Tray Panel -->
+          <section class="panel tray-panel">
+
+            <!-- Tray Grid -->
+             <section class="tray-grid">
+              <button type="button" class="tray-item">
+                <div class="tray-icon"></div>
+              </button>
+              <button type="button" class="tray-item">
+                <div class="tray-icon"></div>
+              </button>
+              <button type="button" class="tray-item">
+                <div class="tray-icon"></div>
+              </button>
+              <button type="button" class="tray-item">
+                <div class="tray-icon"></div>
+              </button>
+             </section>
+
+          </section>
 
           <!-- Language Panel -->
           <section class="panel language-panel">
@@ -166,13 +186,72 @@
             </section>
 
             <!-- Language Footer -->
-             <footer class="language-footer">
+            <footer class="language-footer">
               <button type="button" class="language-settings-trigger">
                 Language Settings
               </button>
-             </footer>
+            </footer>
           </section>
-          <section class="panel quick-action-panel"></section>
+
+          <!-- Action Panel -->
+          <section class="panel quick-action-panel">
+            <!-- Action Grid -->
+            <section class="action-grid">
+              <button type="button" class="action-item active-action">
+                <i class="ri-wifi-line"></i>
+                <span class="action-label">Wi-Fi</span>
+              </button>
+              <button type="button" class="action-item active-action">
+                <i class="ri-bluetooth-line"></i>
+
+                <span class="action-label"> Bluetooth </span>
+              </button>
+              <button type="button" class="action-item">
+                <i class="ri-moon-clear-line"></i>
+
+                <span class="action-label"> Focus </span>
+              </button>
+            </section>
+
+            <!-- Brightness -->
+            <section class="action-slider-group">
+              <header class="slider-header">
+                <i class="ri-sun-line"></i>
+                <span>Brightness</span>
+              </header>
+              <input type="range" class="action-slider" />
+            </section>
+
+            <!-- volume -->
+            <section class="action-slider-group">
+              <header class="slider-header">
+                <i class="ri-volume-up-line"></i>
+                <span>Volume</span>
+              </header>
+              <input type="range" class="action-slider" />
+            </section>
+
+            <!-- Action Footer -->
+            <footer class="action-footer">
+              <!-- Battery -->
+              <section class="battery-status">
+                <i class="ri-battery-fill"></i>
+
+                <span class="battery-level"> 100% </span>
+              </section>
+
+              <!-- Settings -->
+              <button
+                type="button"
+                class="action-settings-trigger"
+                aria-label="Open Settings"
+              >
+                <i class="ri-settings-3-line"></i>
+              </button>
+            </footer>
+          </section>
+
+          <!-- Notification Panel -->
           <section class="panel notification-panel"></section>
         </section>
       </section>
