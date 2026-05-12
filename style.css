@@ -202,7 +202,7 @@ input {
 .start-menu {
   width: 620px;
   padding: 20px;
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 24px;
 }
@@ -348,7 +348,7 @@ input {
 .language-panel {
   width: 320px;
   padding: 14px;
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 14px;
 }
@@ -415,7 +415,7 @@ input {
 .quick-action-panel {
   width: 360px;
   padding: 16px;
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
@@ -488,7 +488,6 @@ input {
 }
 
 .tray-panel {
-  display: none;
   padding: 12px;
   border-radius: 16px;
 }
@@ -596,4 +595,67 @@ input {
   padding: 8px 14px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.06);
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active-panel {
+  display: flex;
+}
+
+.start-menu {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.language-panel {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
+
+.quick-action-panel {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
+
+.tray-panel {
+  position: absolute;
+  right: 190px;
+  bottom: 14px;
+}
+
+.notification-panel {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
+
+.context-menu {
+  position: absolute;
+  width: 220px;
+  padding: 8px;
+  border-radius: 14px;
+  background-color: rgba(25, 25, 28, 0.85);
+  backdrop-filter: blur(20px);
+}
+
+.context-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pad: 10px;
+  border-radius: 10px;
+}
+
+.context-divider {
+  height: 1px;
+  margin-block: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
 }/*# sourceMappingURL=style.css.map */

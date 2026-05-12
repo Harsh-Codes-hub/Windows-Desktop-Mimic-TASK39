@@ -296,8 +296,7 @@ input {
 
   padding: 20px;
 
-  // display: flex;
-  display: none;
+  display: flex;
   flex-direction: column;
 
   gap: 24px;
@@ -511,8 +510,7 @@ input {
 
   padding: 14px;
 
-  // display: flex;
-  display: none;
+  display: flex;
   flex-direction: column;
 
   gap: 14px;
@@ -608,8 +606,7 @@ input {
 
   padding: 16px;
 
-  // display: flex;
-  display: none;
+  display: flex;
   flex-direction: column;
 
   gap: 10px;
@@ -719,7 +716,6 @@ input {
 // ===== Tray Panel =====
 
 .tray-panel {
-  display: none;
   padding: 12px;
 
   border-radius: 16px;
@@ -883,6 +879,112 @@ input {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+// ===== Panel States =====
+
+.panel {
+  display: none;
+}
+
+.panel.active-panel {
+  display: flex;
+}
+
+// ===== Start Menu Position =====
+
+.start-menu {
+  position: absolute;
+
+  bottom: 14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+// ===== Language Panel Position =====
+
+.language-panel {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+}
+
+// ===== Quick Action Panel Position =====
+
+.quick-action-panel {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+}
+
+// ===== Tray Panel Position =====
+
+.tray-panel {
+  position: absolute;
+
+  right: 190px;
+  bottom: 14px;
+}
+
+// ===== Notification Panel Position =====
+
+.notification-panel {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+}
+
+// ===== Context Menu =====
+
+.context-menu {
+  position: absolute;
+
+  width: 220px;
+
+  padding: 8px;
+
+  border-radius: 14px;
+
+  background-color: rgba(25, 25, 28, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  // display: none;
+}
+
+// ===== Context Item =====
+
+.context-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  pad: 10px;
+
+  border-radius: 10px;
+}
+
+// ===== Context Divider =====
+
+.context-divider {
+  height: 1px;
+
+  margin-block: 6px;
+
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+// =====  =====
+// =====  =====
+// =====  =====
+// =====  =====
+// =====  =====
+// =====  =====
 // =====  =====
 // =====  =====
 // =====  =====
