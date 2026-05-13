@@ -909,9 +909,9 @@ input {
   position: absolute;
 
   bottom: 14px;
-  left: 50%;
+  left: 32%;
 
-  transform: translateX(-50%) !important;
+  transform: translate(-50% 0%);
 }
 
 // ===== Language Panel Position =====
@@ -965,7 +965,7 @@ input {
 
   backdrop-filter: blur(20px);
 
-  // display: none;
+  display: none;
 }
 
 // ===== Context Item =====

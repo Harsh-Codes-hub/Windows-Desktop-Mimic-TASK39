@@ -615,8 +615,8 @@ input {
 .start-menu {
   position: absolute;
   bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%) !important;
+  left: 32%;
+  transform: translate(-50% 0%);
 }
 
 .language-panel {
@@ -650,6 +650,7 @@ input {
   border-radius: 14px;
   background-color: rgba(25, 25, 28, 0.85);
   backdrop-filter: blur(20px);
+  display: none;
 }
 
 .context-item {
