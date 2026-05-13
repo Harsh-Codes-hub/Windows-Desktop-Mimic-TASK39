@@ -51,6 +51,10 @@ const ui = {
     monthLabel: document.querySelector(".calendar-month-label"),
 
     navTriggers: document.querySelectorAll(".calendar-nav-trigger"),
+
+    section: document.querySelector(".calendar-section"),
+
+    collapseTrigger: document.querySelector(".calendar-collapse-trigger"),
   },
 };
 
@@ -123,7 +127,7 @@ function updateClock() {
 }
 
 // Calendar Render Function
-function renderCalender() {
+function renderCalendar() {
   const currentDate = systemState.calendarDate;
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -188,7 +192,7 @@ function renderCalender() {
 // ===== logic =====
 updateClock();
 setInterval(updateClock, 1000);
-renderCalender();
+renderCalendar();
 
 Object.values(ui.panels).forEach(({ trigger, panel }) => {
   trigger.addEventListener("click", () => {
@@ -198,6 +202,11 @@ Object.values(ui.panels).forEach(({ trigger, panel }) => {
 
     if (!isActive) {
       panel.classList.add("active-panel");
+      if (panel.classList.contains("notification-panel")) {
+        systemState.calendarDate = new Date();
+
+        renderCalendar();
+      }
     }
   });
 });
@@ -245,4 +254,33 @@ ui.desktop.area.addEventListener("contextmenu", (e) => {
     left: `${x}px`,
     top: `${y}px`,
   });
+});
+
+ui.calendar.navTriggers.forEach((button) => {
+  button.addEventListener("click", () => {
+    const direction = button.dataset.direction;
+    if (direction === "previous") {
+      systemState.calendarDate = new Date(
+        systemState.calendarDate.getFullYear(),
+        systemState.calendarDate.getMonth() - 1,
+        1,
+      );
+    }
+    if (direction === "next") {
+      systemState.calendarDate = new Date(
+        systemState.calendarDate.getFullYear(),
+        systemState.calendarDate.getMonth() + 1,
+        1,
+      );
+    }
+    renderCalendar();
+  });
+});
+
+ui.calendar.collapseTrigger.addEventListener("click", () => {
+  const isExpanded = ui.calendar.section.dataset.calendarExpanded === "true";
+  ui.calendar.section.dataset.calendarExpanded = !isExpanded;
+  const icon = ui.calendar.collapseTrigger.querySelector("i");
+  icon.classList.toggle("ri-arrow-up-s-line");
+  icon.classList.toggle("ri-arrow-down-s-line");
 });

@@ -597,6 +597,13 @@ input {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+.calendar-section[data-calendar-expanded=false] .calendar-month-header,
+.calendar-section[data-calendar-expanded=false] .calendar-weekdays,
+.calendar-section[data-calendar-expanded=false] .calendar-grid,
+.calendar-section[data-calendar-expanded=false] .calendar-footer {
+  display: none;
+}
+
 .panel {
   opacity: 0;
   visibility: hidden;

@@ -879,6 +879,16 @@ input {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+// ===== Calender Section expand =====
+.calendar-section[data-calendar-expanded="false"] {
+  .calendar-month-header,
+  .calendar-weekdays,
+  .calendar-grid,
+  .calendar-footer {
+    display: none;
+  }
+}
+
 // ===== Panel States =====
 
 .panel {
