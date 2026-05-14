@@ -72,6 +72,10 @@ const ui = {
 
     reset: document.querySelector(".focus-reset-trigger"),
   },
+
+  sounds: {
+    focusComplete: new Audio("./sounds/alarm-sound.mp3"),
+  },
 };
 
 const utils = {
@@ -94,6 +98,7 @@ const systemState = {
     remaining: 30 * 60,
     active: false,
     interval: null,
+    paused: false,
   },
 };
 
@@ -242,21 +247,99 @@ function renderCountdown() {
 
 function startFocusTimer() {
   if (systemState.focusTimer.active) return;
+
   systemState.focusTimer.active = true;
+
+  systemState.focusTimer.paused = false;
+
   systemState.focusTimer.remaining = systemState.focusTimer.duration * 60;
 
   renderCountdown();
+
+  runFocusCountdown();
+
+  utils.closeAllPanels();
+  ui.focus.modal.classList.add("active-panel");
+}
+
+// Focus Countdown Function
+
+function runFocusCountdown() {
   systemState.focusTimer.interval = setInterval(() => {
     systemState.focusTimer.remaining--;
 
     renderCountdown();
+
     if (systemState.focusTimer.remaining <= 0) {
       clearInterval(systemState.focusTimer.interval);
+
+      systemState.focusTimer.interval = null;
+
+      systemState.focusTimer.active = false;
+
+      ui.sounds.focusComplete.loop = true;
+
+      ui.sounds.focusComplete.currentTime = 0;
+
+      ui.sounds.focusComplete.play();
+
+      Swal.fire({
+        title: "Focus Session Complete",
+
+        text: "Great work. Time for a short break.",
+
+        icon: "success",
+
+        confirmButtonText: "Dismiss",
+      }).then(() => {
+        ui.sounds.focusComplete.pause();
+
+        ui.sounds.focusComplete.currentTime = 0;
+
+        ui.sounds.focusComplete.loop = false;
+      });
     }
   }, 1000);
+}
 
+// Focus toggle Function
 
-  ui.focus.modal.classList.add("active-panel");
+function toggleFocusTimer() {
+  const timer = systemState.focusTimer;
+
+  if (!timer.paused) {
+    clearInterval(timer.interval);
+
+    timer.interval = null;
+
+    timer.paused = true;
+
+    ui.focus.stop.textContent = "Resume";
+  } else {
+    timer.paused = false;
+
+    runFocusCountdown();
+
+    ui.focus.stop.textContent = "Stop";
+  }
+}
+
+// Focus Reset Function
+
+function resetFocusTimer() {
+  clearInterval(systemState.focusTimer.interval);
+
+  systemState.focusTimer.interval = null;
+
+  systemState.focusTimer.active = false;
+
+  systemState.focusTimer.paused = false;
+
+  systemState.focusTimer.remaining = systemState.focusTimer.duration * 60;
+
+  renderCountdown();
+
+  ui.focus.stop.textContent = "Stop";
 }
 
 // ===== Implying  =====
@@ -361,11 +444,11 @@ ui.focus.triggers.forEach((button) => {
   button.addEventListener("click", () => {
     const action = button.dataset.action;
     if (action === "increase") {
-      systemState.focusTimer.duration += 5;
+      systemState.focusTimer.duration += 1;
     }
     if (action === "decrease") {
-      if (systemState.focusTimer.duration > 5) {
-        systemState.focusTimer.duration -= 5;
+      if (systemState.focusTimer.duration > 1) {
+        systemState.focusTimer.duration -= 1;
       }
     }
     renderFocusDuration();
@@ -373,3 +456,7 @@ ui.focus.triggers.forEach((button) => {
 });
 
 ui.focus.start.addEventListener("click", startFocusTimer);
+
+ui.focus.stop.addEventListener("click", toggleFocusTimer);
+
+ui.focus.reset.addEventListener("click", resetFocusTimer);
