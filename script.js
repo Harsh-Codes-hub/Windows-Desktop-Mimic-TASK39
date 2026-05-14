@@ -241,10 +241,20 @@ function renderCountdown() {
 // Focus Timer Start Function
 
 function startFocusTimer() {
-  ((systemState.focusTimer.active = true),
-    (systemState.focusTimer.remaining = systemState.focusTimer.duration * 60));
+  if (systemState.focusTimer.active) return;
+  systemState.focusTimer.active = true;
+  systemState.focusTimer.remaining = systemState.focusTimer.duration * 60;
 
   renderCountdown();
+  systemState.focusTimer.interval = setInterval(() => {
+    systemState.focusTimer.remaining--;
+
+    renderCountdown();
+    if (systemState.focusTimer.remaining <= 0) {
+      clearInterval(systemState.focusTimer.interval);
+    }
+  }, 1000);
+
 
   ui.focus.modal.classList.add("active-panel");
 }
@@ -272,7 +282,7 @@ Object.values(ui.panels).forEach(({ trigger, panel }) => {
 });
 
 document.addEventListener("click", (e) => {
-  const clickedInsidePanel = e.target.closest(".panel");
+  const clickedInsidePanel = e.target.closest(".panel:not(.focus-modal)");
 
   const clickedTrigger = e.target.closest(".taskbar-item");
 
