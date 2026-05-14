@@ -66,7 +66,7 @@
         <!-- Overlay Layer -->
         <section class="overlay-layer">
           <!-- Start Menu -->
-          <section class="panel start-menu">
+          <section class="panel bg start-menu">
             <!-- Search -->
             <section class="start-search">
               <button
@@ -160,7 +160,7 @@
           </section>
 
           <!-- Tray Panel -->
-          <section class="panel tray-panel">
+          <section class="panel bg tray-panel">
             <!-- Tray Grid -->
             <section class="tray-grid">
               <button type="button" class="tray-item">
@@ -179,7 +179,7 @@
           </section>
 
           <!-- Language Panel -->
-          <section class="panel language-panel">
+          <section class="panel bg language-panel">
             <!-- Language Header -->
             <header class="language-header">
               <h2 class="language-title">Keyboard Layout</h2>
@@ -216,7 +216,7 @@
           </section>
 
           <!-- Action Panel -->
-          <section class="panel quick-action-panel">
+          <section class="panel bg quick-action-panel">
             <!-- Action Grid -->
             <section class="action-grid">
               <button type="button" class="action-item active-action">
@@ -276,7 +276,7 @@
           <!-- Notification Panel -->
           <section class="panel notification-panel">
             <!-- Notification Area -->
-            <section class="notification-section">
+            <section class="notification-section bg">
               <!-- Notification Header -->
               <header class="notification-header">
                 <h2 class="notification-title">Notifications</h2>
@@ -292,7 +292,7 @@
             </section>
 
             <!-- calendar Area -->
-            <section class="calendar-section" data-calendar-expanded="true">
+            <section class="calendar-section bg" data-calendar-expanded="true">
               <!-- calendar Header -->
               <header class="calendar-header">
                 <section class="calendar-date-info">
@@ -353,6 +353,27 @@
               </footer>
             </section>
           </section>
+
+          <!-- Focus Panel -->
+           <section class="panel focus-modal">
+            <section class="focus-modal-content bg">
+              <span class="focus-session-label">
+                Focus Session
+              </span>
+              <span class="focus-countdown">
+                30:00
+              </span>
+
+              <section class="focus-controls">
+                <button type="button" class="focus-stop-trigger">
+                  stop
+                </button>
+                <button type="button" class="focus-reset-trigger">
+                  Reset
+                </button>
+              </section>
+            </section>
+           </section>
         </section>
       </section>
 

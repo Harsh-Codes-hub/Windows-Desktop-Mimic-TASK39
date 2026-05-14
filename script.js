@@ -56,6 +56,22 @@ const ui = {
 
     collapseTrigger: document.querySelector(".calendar-collapse-trigger"),
   },
+
+  focus: {
+    duration: document.querySelector(".focus-duration"),
+
+    triggers: document.querySelectorAll(".focus-time-trigger"),
+
+    start: document.querySelector(".focus-trigger"),
+
+    modal: document.querySelector(".focus-modal"),
+
+    countdown: document.querySelector(".focus-countdown"),
+
+    stop: document.querySelector(".focus-stop-trigger"),
+
+    reset: document.querySelector(".focus-reset-trigger"),
+  },
 };
 
 const utils = {
@@ -73,6 +89,12 @@ const utils = {
 const systemState = {
   currentDate: new Date(),
   calendarDate: new Date(),
+  focusTimer: {
+    duration: 30,
+    remaining: 30 * 60,
+    active: false,
+    interval: null,
+  },
 };
 
 // ===== Functions =====
@@ -189,7 +211,45 @@ function renderCalendar() {
   }
 }
 
-// ===== logic =====
+// Render Focus Duration
+
+function renderFocusDuration() {
+  ui.focus.duration.textContent = `${systemState.focusTimer.duration} mins`;
+}
+
+// Countdown Formatter Function
+
+function formatCountdown(seconds) {
+  const minutes = Math.floor(seconds / 60);
+
+  const remainingSeconds = seconds % 60;
+
+  return `${String(minutes).padStart(2, "0")} : ${String(remainingSeconds).padStart(2, "0")}`.replace(
+    /\s/g,
+    "",
+  );
+}
+
+// Render Countdown Function
+
+function renderCountdown() {
+  ui.focus.countdown.textContent = formatCountdown(
+    systemState.focusTimer.remaining,
+  );
+}
+
+// Focus Timer Start Function
+
+function startFocusTimer() {
+  ((systemState.focusTimer.active = true),
+    (systemState.focusTimer.remaining = systemState.focusTimer.duration * 60));
+
+  renderCountdown();
+
+  ui.focus.modal.classList.add("active-panel");
+}
+
+// ===== Implying  =====
 updateClock();
 setInterval(updateClock, 1000);
 renderCalendar();
@@ -284,3 +344,22 @@ ui.calendar.collapseTrigger.addEventListener("click", () => {
   icon.classList.toggle("ri-arrow-up-s-line");
   icon.classList.toggle("ri-arrow-down-s-line");
 });
+
+// Focus Trigger Logic
+
+ui.focus.triggers.forEach((button) => {
+  button.addEventListener("click", () => {
+    const action = button.dataset.action;
+    if (action === "increase") {
+      systemState.focusTimer.duration += 5;
+    }
+    if (action === "decrease") {
+      if (systemState.focusTimer.duration > 5) {
+        systemState.focusTimer.duration -= 5;
+      }
+    }
+    renderFocusDuration();
+  });
+});
+
+ui.focus.start.addEventListener("click", startFocusTimer);

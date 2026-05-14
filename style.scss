@@ -9,6 +9,18 @@ $taskbar-border: oklch(30.615% 0.02895 256.863);
 
 $item-radius: 6px;
 
+// === Mixin ===
+
+@mixin background {
+  border-radius: 18px;
+
+  background-color: rgba(25, 25, 28, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
 // === Reset ===
 * {
   margin: 0;
@@ -279,14 +291,10 @@ input {
   position: absolute;
 
   pointer-events: auto;
+}
 
-  border-radius: 18px;
-
-  background-color: rgba(25, 25, 28, 0.85);
-
-  backdrop-filter: blur(20px);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+.bg {
+  @include background();
 }
 
 // ===== Start Menu =====
@@ -770,10 +778,6 @@ input {
 .notification-section,
 .calendar-section {
   padding: 16px;
-
-  border-radius: 18px;
-
-  background-color: rgba(255, 255, 255, 0.04);
 }
 
 // ===== Notification Header =====
@@ -1006,11 +1010,65 @@ input {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-// =====  =====
-// =====  =====
-// =====  =====
-// =====  =====
-// =====  =====
+// ===== Focus Model =====
+
+.focus-modal {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+// ===== Focus Modal Content =====
+
+.focus-modal-content {
+  width: 320px;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+
+  border-radius: 24px;
+
+  background-color: rgba(28, 28, 30, 0.92);
+}
+
+// ===== Session Label =====
+
+.focus-session-label {
+  font-size: 0.9rem;
+
+  opacity: 0.7;
+}
+
+// ===== Focus Controls =====
+
+.focus-controls {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+// ===== Focus Control Buttons =====
+
+.focus-stop-trigger,
+.focus-reset-trigger {
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
 // =====  =====
 // =====  =====
 // =====  =====
