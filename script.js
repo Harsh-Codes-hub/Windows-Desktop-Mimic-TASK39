@@ -485,6 +485,20 @@ function renderLanguage() {
   ui.language.taskbarCode[1].textContent = region;
 }
 
+// Tray Position Function
+
+function positionTrayPanel() {
+  const triggerRect = ui.panels.tray.trigger.getBoundingClientRect();
+
+  const panel = ui.panels.tray.panel;
+
+  const panelWidth = panel.offsetWidth;
+
+  panel.style.left = `${
+    triggerRect.left + triggerRect.width / 2 - panelWidth / 2
+  }px`;
+}
+
 // ===== Implying  =====
 updateClock();
 setInterval(updateClock, 1000);
@@ -504,6 +518,9 @@ Object.values(ui.panels).forEach(({ trigger, panel }) => {
     utils.closeAllPanels();
 
     if (!isActive) {
+      if (panel.classList.contains("tray-panel")) {
+        positionTrayPanel();
+      }
       panel.classList.add("active-panel");
       if (panel.classList.contains("notification-panel")) {
         systemState.calendarDate = new Date();

@@ -3,6 +3,7 @@
 $bg-main: #111;
 $text-main: #f5f5f5;
 $taskbar-height: 48px;
+$panel-gap: 14px;
 
 $taskbar-bg: oklch(24.989% 0.02572 258.356);
 $taskbar-border: oklch(30.615% 0.02895 256.863);
@@ -925,10 +926,14 @@ input {
 .start-menu {
   position: absolute;
 
-  bottom: 14px;
-  left: 32%;
+  bottom: $panel-gap;
+  left: 50%;
 
-  transform: translate(-50% 0%);
+  transform: translateX(-50%) translateY(10px);
+}
+
+.start-menu.active-panel {
+  transform: translateX(-50%) translateY(0px);
 }
 
 // ===== Language Panel Position =====
@@ -954,7 +959,6 @@ input {
 .tray-panel {
   position: absolute;
 
-  right: 190px;
   bottom: 14px;
 }
 
@@ -1070,8 +1074,23 @@ input {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-// =====  =====
-// =====  =====
-// =====  =====
-// =====  =====
-// =====  =====
+// ===== Hover Effects =====
+.taskbar-item,
+.action-item,
+.language-item,
+.context-item,
+.calendar-day,
+.tray-item,
+.focus-controls button {
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}
