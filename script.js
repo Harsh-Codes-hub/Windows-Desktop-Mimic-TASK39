@@ -35,6 +35,8 @@ const ui = {
     contextMenu: document.querySelector(".desktop-context-menu"),
 
     shell: document.querySelector(".desktop-shell"),
+
+    refresh: document.querySelector(".refresh-trigger"),
   },
 
   time: {
@@ -650,4 +652,8 @@ ui.language.items.forEach((item) => {
 
     renderLanguage();
   });
+});
+
+ui.desktop.refresh.addEventListener("click", () => {
+  location.reload();
 });
