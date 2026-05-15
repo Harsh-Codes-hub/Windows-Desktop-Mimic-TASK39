@@ -33,6 +33,8 @@ const ui = {
     contextLayer: document.querySelector(".context-layer"),
 
     contextMenu: document.querySelector(".desktop-context-menu"),
+
+    shell: document.querySelector(".desktop-shell"),
   },
 
   time: {
@@ -71,10 +73,38 @@ const ui = {
     stop: document.querySelector(".focus-stop-trigger"),
 
     reset: document.querySelector(".focus-reset-trigger"),
+
+    cancel: document.querySelector(".focus-cancel-trigger"),
   },
 
   sounds: {
     focusComplete: new Audio("./sounds/alarm-sound.mp3"),
+  },
+
+  actions: {
+    buttons: document.querySelectorAll(".action-item"),
+
+    taskbarWifi: document.querySelector(".quick-action-trigger .ri-wifi-line"),
+
+    taskbarVolume: document.querySelector(
+      ".quick-action-trigger .ri-volume-up-line",
+    ),
+  },
+
+  sliders: {
+    controls: document.querySelectorAll(".action-slider"),
+  },
+
+  battery: {
+    level: document.querySelector(".battery-level"),
+
+    taskbar: document.querySelector(".taskbar-battery-level"),
+  },
+
+  language: {
+    items: document.querySelectorAll(".language-item"),
+
+    taskbarCode: document.querySelectorAll(".language-trigger span"),
   },
 };
 
@@ -100,6 +130,19 @@ const systemState = {
     interval: null,
     paused: false,
   },
+  actions: {
+    wifi: true,
+    bluetooth: true,
+  },
+  environment: {
+    brightness: 100,
+    volume: 100,
+  },
+  battery: {
+    level: 100,
+    charging: false,
+  },
+  language: "ENG IN",
 };
 
 // ===== Functions =====
@@ -307,6 +350,8 @@ function runFocusCountdown() {
 function toggleFocusTimer() {
   const timer = systemState.focusTimer;
 
+  if (!timer.active) return;
+
   if (!timer.paused) {
     clearInterval(timer.interval);
 
@@ -326,7 +371,7 @@ function toggleFocusTimer() {
 
 // Focus Reset Function
 
-function resetFocusTimer() {
+function resetFocusTimer(shouldClose = false) {
   clearInterval(systemState.focusTimer.interval);
 
   systemState.focusTimer.interval = null;
@@ -340,12 +385,115 @@ function resetFocusTimer() {
   renderCountdown();
 
   ui.focus.stop.textContent = "Stop";
+
+  if (shouldClose) {
+    ui.focus.modal.classList.remove("active-panel");
+  }
+}
+
+// Render Action Function
+
+function renderActions() {
+  ui.actions.buttons.forEach((button) => {
+    const action = button.dataset.action;
+    if (action === "focus") return;
+    button.classList.toggle("active-action", systemState.actions[action]);
+    ui.actions.taskbarWifi.className = systemState.actions.wifi
+      ? "ri-wifi-line"
+      : "ri-wifi-off-line";
+  });
+}
+
+// Render Brightness Function
+
+function renderBrightness() {
+  const safeBrightness = Math.max(systemState.environment.brightness, 20);
+
+  ui.desktop.shell.style.filter = `brightness(${safeBrightness}%)`;
+}
+
+// Volume Icon Function
+
+function getVolumeIcon() {
+  const volume = systemState.environment.volume;
+
+  if (volume <= 0) return "ri-volume-mute-line";
+
+  if (volume <= 30) return "ri-volume-down-line";
+
+  return "ri-volume-up-line";
+}
+
+// Render Volume Function
+
+function renderVolume() {
+  const normalizedVolume = systemState.environment.volume / 100;
+
+  Object.values(ui.sounds).forEach((sound) => {
+    sound.volume = normalizedVolume;
+    ui.actions.taskbarVolume.className = getVolumeIcon();
+  });
+}
+
+// Render Battery function
+function renderBattery() {
+  const batteryLevel = `${systemState.battery.level}%`;
+
+  ui.battery.level.textContent = batteryLevel;
+
+  ui.battery.taskbar.textContent = batteryLevel;
+}
+
+// Battery Data Function
+async function initializeBattery() {
+  if (!navigator.getBattery) return;
+
+  const battery = await navigator.getBattery();
+
+  function updateBatteryInfo() {
+    systemState.battery.level = Math.floor(battery.level * 100);
+
+    systemState.battery.charging = battery.charging;
+
+    renderBattery();
+  }
+
+  updateBatteryInfo();
+
+  battery.addEventListener("levelchange", updateBatteryInfo);
+
+  battery.addEventListener("chargingchange", updateBatteryInfo);
+}
+
+// Language Render Function
+
+function renderLanguage() {
+  ui.language.items.forEach((item) => {
+    item.classList.toggle(
+      "active-language",
+
+      item.dataset.language === systemState.language,
+    );
+  });
+
+  const [language, region] = systemState.language.split(" ");
+
+  ui.language.taskbarCode[0].textContent = language;
+
+  ui.language.taskbarCode[1].textContent = region;
 }
 
 // ===== Implying  =====
 updateClock();
 setInterval(updateClock, 1000);
 renderCalendar();
+renderActions();
+initializeBattery();
+renderBrightness();
+renderVolume();
+renderFocusDuration();
+renderCountdown();
+renderLanguage();
 
 Object.values(ui.panels).forEach(({ trigger, panel }) => {
   trigger.addEventListener("click", () => {
@@ -459,4 +607,47 @@ ui.focus.start.addEventListener("click", startFocusTimer);
 
 ui.focus.stop.addEventListener("click", toggleFocusTimer);
 
-ui.focus.reset.addEventListener("click", resetFocusTimer);
+ui.focus.reset.addEventListener("click", () => resetFocusTimer());
+
+ui.focus.cancel.addEventListener("click", () => resetFocusTimer(true));
+
+// Quick Action toggle simulation
+ui.actions.buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const action = button.dataset.action;
+
+    if (action === "focus") {
+      startFocusTimer();
+      return;
+    }
+
+    systemState.actions[action] = !systemState.actions[action];
+    renderActions();
+  });
+});
+
+// Slider Interaction Simulation
+ui.sliders.controls.forEach((slider) => {
+  slider.addEventListener("input", () => {
+    const type = slider.dataset.slider;
+
+    systemState.environment[type] = slider.value;
+
+    if (type === "brightness") {
+      renderBrightness();
+    }
+
+    if (type === "volume") {
+      renderVolume();
+    }
+  });
+});
+
+// Language Toggle Interaction Simulation
+ui.language.items.forEach((item) => {
+  item.addEventListener("click", () => {
+    systemState.language = item.dataset.language;
+
+    renderLanguage();
+  });
+});

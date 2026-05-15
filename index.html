@@ -189,7 +189,7 @@
             <!-- Language List -->
             <section class="language-list">
               <!-- Active -->
-              <button type="button" class="language-item active-language">
+              <button type="button" class="language-item active-language" data-language="ENG IN">
                 <div class="language-indicator"></div>
                 <section class="language-content">
                   <span class="language-name"> English (India) </span>
@@ -198,7 +198,7 @@
               </button>
 
               <!-- Non-Active -->
-              <button type="button" class="language-item">
+              <button type="button" class="language-item" data-language="ENG US">
                 <div class="language-indicator"></div>
                 <section class="language-content">
                   <span class="language-name"> English (US) </span>
@@ -219,18 +219,24 @@
           <section class="panel bg quick-action-panel">
             <!-- Action Grid -->
             <section class="action-grid">
-              <button type="button" class="action-item active-action">
+              <button
+                type="button"
+                class="action-item active-action"
+                data-action="wifi"
+              >
                 <i class="ri-wifi-line"></i>
                 <span class="action-label">Wi-Fi</span>
               </button>
-              <button type="button" class="action-item active-action">
+              <button
+                type="button"
+                class="action-item active-action"
+                data-action="bluetooth"
+              >
                 <i class="ri-bluetooth-line"></i>
-
                 <span class="action-label"> Bluetooth </span>
               </button>
-              <button type="button" class="action-item">
+              <button type="button" class="action-item" data-action="focus">
                 <i class="ri-moon-clear-line"></i>
-
                 <span class="action-label"> Focus </span>
               </button>
             </section>
@@ -241,7 +247,14 @@
                 <i class="ri-sun-line"></i>
                 <span>Brightness</span>
               </header>
-              <input type="range" class="action-slider" />
+              <input
+                type="range"
+                class="action-slider"
+                data-slider="brightness"
+                min="20"
+                max="100"
+                value="100"
+              />
             </section>
 
             <!-- volume -->
@@ -250,7 +263,14 @@
                 <i class="ri-volume-up-line"></i>
                 <span>Volume</span>
               </header>
-              <input type="range" class="action-slider" />
+              <input
+                type="range"
+                class="action-slider"
+                data-slider="volume"
+                min="0"
+                max="100"
+                value="100"
+              />
             </section>
 
             <!-- Action Footer -->
@@ -345,9 +365,21 @@
               <!-- calendar Footer -->
               <footer class="calendar-footer">
                 <section class="focus-time">
-                  <button type="button" class="focus-time-trigger" data-action="decrease">-</button>
+                  <button
+                    type="button"
+                    class="focus-time-trigger"
+                    data-action="decrease"
+                  >
+                    -
+                  </button>
                   <span class="focus-duration">30 mins</span>
-                  <button type="button" class="focus-time-trigger" data-action="increase">+</button>
+                  <button
+                    type="button"
+                    class="focus-time-trigger"
+                    data-action="increase"
+                  >
+                    +
+                  </button>
                 </section>
                 <button type="button" class="focus-trigger">Focus</button>
               </footer>
@@ -355,25 +387,20 @@
           </section>
 
           <!-- Focus Panel -->
-           <section class="panel focus-modal">
+          <section class="panel focus-modal">
             <section class="focus-modal-content bg">
-              <span class="focus-session-label">
-                Focus Session
-              </span>
-              <span class="focus-countdown">
-                30:00
-              </span>
+              <span class="focus-session-label"> Focus Session </span>
+              <span class="focus-countdown"> 30:00 </span>
 
               <section class="focus-controls">
-                <button type="button" class="focus-stop-trigger">
-                  stop
-                </button>
-                <button type="button" class="focus-reset-trigger">
-                  Reset
+                <button type="button" class="focus-stop-trigger">stop</button>
+                <button type="button" class="focus-reset-trigger">Reset</button>
+                <button type="button" class="focus-cancel-trigger">
+                  Cancel
                 </button>
               </section>
             </section>
-           </section>
+          </section>
         </section>
       </section>
 
@@ -447,7 +474,7 @@
             <i class="ri-wifi-line"></i>
             <i class="ri-volume-up-line"></i>
             <i class="ri-battery-fill"></i>
-            <span>100%</span>
+            <span class="taskbar-battery-level">100%</span>
           </button>
 
           <!-- Notification -->

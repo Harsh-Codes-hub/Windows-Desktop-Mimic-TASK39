@@ -708,7 +708,8 @@ input {
 }
 
 .focus-stop-trigger,
-.focus-reset-trigger {
+.focus-reset-trigger,
+.focus-cancel-trigger {
   padding: 10px 18px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.06);
